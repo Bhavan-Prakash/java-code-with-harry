@@ -1,0 +1,67 @@
+📌 Java: Why void methods cannot be printed
+🔎 Problem Example
+class square {
+    int side;
+    Scanner in = new Scanner(System.in);
+
+    public void getValues() {   // 👈 void method
+        System.out.println("Enter side of Square");
+        side = in.nextInt();
+    }
+
+    public int area() {
+        return side * side;
+    }
+}
+
+public class Q3 {
+    public static void main(String[] args) {
+        square cla = new square();
+        System.out.println(cla.getValues());   // ❌ ERROR
+        System.out.println(cla.area());        // ✅ works
+    }
+}
+
+⚠️ Why error occurs?
+
+void = method does not return anything.
+
+But System.out.println(cla.getValues()); tries to print a return value.
+
+Since nothing is returned → compiler error.
+
+✅ Correct Usage
+public class Q3 {
+    public static void main(String[] args) {
+        square cla = new square();
+        cla.getValues();                     // ✅ just call void method
+        System.out.println(cla.area());      // ✅ prints result
+    }
+}
+
+📖 Notes
+
+Void methods
+
+Perform an action (input, update, print, etc.).
+
+Do not return any value.
+
+Call them simply:
+
+obj.methodName();
+
+
+Non-void methods
+
+Return a value (e.g., int, String, double).
+
+Can be printed or stored:
+
+System.out.println(obj.methodName());
+int result = obj.methodName();
+
+
+✅ Key Rule to Remember:
+👉 void = “do something”
+👉 non-void = “give me something”

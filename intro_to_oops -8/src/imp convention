@@ -1,0 +1,47 @@
+📌 Java Error: Class 'X' is public, should be declared in a file named 'X.java'
+🔎 What does it mean?
+
+In Java, if a class is declared as public, the filename must exactly match the class name (case-sensitive).
+
+Otherwise, the compiler throws this error.
+
+⚠️ Example (Error Case)
+
+File name: Main.java
+
+public class cellphone {
+    // code
+}
+
+
+❌ Error: Class 'cellphone' is public, should be declared in a file named 'cellphone.java'
+
+✅ Fixes
+
+Rename the file to match the class name
+
+Class: public class cellphone
+
+File: cellphone.java
+
+OR remove public keyword (only if public access isn’t required)
+
+class cellphone {
+    // code
+}
+
+
+Then the file name can be anything (e.g., Main.java).
+
+📖 Java Naming Convention
+
+Class names should start with an uppercase letter.
+Example:
+
+public class Cellphone
+
+
+→ File must be: Cellphone.java
+
+✅ Key Rule to Remember
+Public class name = File name (exactly, case-sensitive).
